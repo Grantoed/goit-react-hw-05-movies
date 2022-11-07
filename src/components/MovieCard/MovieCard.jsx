@@ -13,6 +13,8 @@ export const MovieCard = () => {
   }, [movieId]);
   const location = useLocation();
 
+  console.log(location);
+
   return (
     <Box>
       <GoBack to={location.state?.from ?? '/'}>Go back</GoBack>
@@ -34,8 +36,12 @@ export const MovieCard = () => {
         </Box>
       </Box>
       <Box pt="30px" pb="30px" borderBottom="1px solid black">
-        <NavItem to="cast">Cast</NavItem>
-        <NavItem to="reviews">Reviews</NavItem>
+        <NavItem to="cast" state={{ from: location.state?.from }}>
+          Cast
+        </NavItem>
+        <NavItem to="reviews" state={{ from: location.state?.from }}>
+          Reviews
+        </NavItem>
       </Box>
       <Outlet />
     </Box>
