@@ -13,8 +13,6 @@ export const MovieCard = () => {
   }, [movieId]);
   const location = useLocation();
 
-  console.log(location);
-
   return (
     <Box>
       <GoBack to={location.state?.from ?? '/'}>Go back</GoBack>
